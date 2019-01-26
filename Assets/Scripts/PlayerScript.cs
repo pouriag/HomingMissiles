@@ -28,10 +28,12 @@ public class PlayerScript : MonoBehaviour {
 
     private void Move()
     {
-        moveHorizontal = Input.GetAxis("Horizontal");
-        moveVertical = Input.GetAxis("Vertical");
 
-        rigidBody.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed * reverse);
+        moveHorizontal = Input.GetAxis("P"+id+" Horizontal");
+        moveVertical = Input.GetAxis("P" + id + " Vertical");
+
+        rigidBody.AddForce(new Vector2(moveHorizontal * speed, moveVertical * speed * reverse));
+       
 
         //float deltaX = moveHorizontal * Time.deltaTime * speed;
         //float newX = transform.position.x + deltaX;
