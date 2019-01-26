@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +21,6 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
         for (int i = 0; i < 20; i++)
-        {
             if (Input.GetKeyDown("joystick 2 button " + i))
             {
                 Debug.Log("joystick 2 button " + i);

@@ -1,0 +1,45 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class NewBehaviourScript : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+<<<<<<< HEAD
+        for (int i = 0; i < 20;i++){
+            if (Input.GetKeyDown("joystick 1 button " + i))
+            {
+                Debug.Log("joystick 1 button " + i);
+            }
+=======
+        //for (int i = 0; i < 20;i++){
+        //    if (Input.GetKeyDown("joystick 1 button " + i))
+        //    {
+        //        Debug.Log("joystick 1 button " + i);
+        //    }
+        //}
+
+        if (Input.GetKeyDown("joystick 1 button 13"))
+        {
+            print("FIRE!!!");
+>>>>>>> c6e77f05da14b3296d9778a20c4603ba2dcc3739
+        }
+        for (int i = 0; i < 20; i++)
+        {
+            if (Input.GetKeyDown("joystick 2 button " + i))
+            {
+                Debug.Log("joystick 2 button " + i);
+            }
+        }
+
+    }
+}
