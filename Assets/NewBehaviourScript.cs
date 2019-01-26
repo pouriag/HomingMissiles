@@ -14,12 +14,16 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
 
-        for (int i = 0; i < 20;i++){
-            if (Input.GetKeyDown("joystick 1 button " + i))
-            {
-                Debug.Log("joystick 1 button " + i);
-            }
-            Debug.Log(Input.GetAxis("P1 Boost"));
+        //for (int i = 0; i < 20;i++){
+        //    if (Input.GetKeyDown("joystick 1 button " + i))
+        //    {
+        //        Debug.Log("joystick 1 button " + i);
+        //    }
+        //}
+
+        if (Input.GetKeyDown("joystick 1 button 13"))
+        {
+            print("FIRE!!!");
         }
 
 
