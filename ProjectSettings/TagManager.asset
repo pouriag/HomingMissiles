@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Background
+  - Target1
+  - Target2
+  - Obstacle
+  - Shield
+  - Speed
+  - Control
   layers:
   - Default
   - TransparentFX
