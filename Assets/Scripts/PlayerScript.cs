@@ -83,11 +83,11 @@ public class PlayerScript : MonoBehaviour {
     private void Move()
     {
 
-        moveHorizontal = Input.GetAxis("P"+id+" Horizontal");
-        moveVertical = Input.GetAxis("P" + id + " Vertical");
+        //moveHorizontal = Input.GetAxis("P"+id+" Horizontal");
+        //moveVertical = Input.GetAxis("P" + id + " Vertical");
 
-        //moveHorizontal = Input.GetAxis("Horizontal");
-        //moveVertical = Input.GetAxis("Vertical");
+        moveHorizontal = Input.GetAxis("Horizontal");
+        moveVertical = Input.GetAxis("Vertical");
 
         if (control)
         {
