@@ -70,7 +70,7 @@ public class ColliderScript : MonoBehaviour {
             float x = xGrids[xInd];
             float y = yGrids[yInd];
 
-            GameObject newObj = Instantiate(spawnables[i], new Vector3(x, y, 0), Quaternion.identity);
+            GameObject newObj = Instantiate(spawnables[i], new Vector3(x, y, -0.7f), Quaternion.identity);
             newObj.transform.parent = road.transform;
         }
 
@@ -92,7 +92,7 @@ public class ColliderScript : MonoBehaviour {
             float x = xGrids[xInd];
             float y = yGrids[yInd];
 
-            GameObject newObj = Instantiate(items[i], new Vector3(x, y, 0), Quaternion.identity);
+            GameObject newObj = Instantiate(items[i], new Vector3(x, y, -0.7f), Quaternion.identity);
             newObj.transform.parent = road.transform;
         }
     }

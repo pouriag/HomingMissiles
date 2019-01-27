@@ -100,10 +100,8 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Collider other = collision.collider;
-
         if (other.tag == "Obstacle")
         {
             if (shield)
@@ -116,7 +114,7 @@ public class PlayerScript : MonoBehaviour {
                 Destroy(this.gameObject);
             }
         }
-        else if (other.tag.StartsWith("Target"))
+        if (other.tag.StartsWith("Target"))
         {
             char c = other.tag[other.tag.Length - 1];
             char i = id.ToString()[0];
@@ -134,14 +132,11 @@ public class PlayerScript : MonoBehaviour {
                 }
                 else
                 {
-                    Destroy(this.gameObject);                    
+                    Destroy(this.gameObject);
                 }
             }
         }
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
         if (other.tag == "Control")
         {
             Destroy(other.gameObject);
