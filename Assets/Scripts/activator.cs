@@ -9,7 +9,7 @@ public class Activator : MonoBehaviour
     public GameObject hottie;
     public GameObject bumpkin;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         GameObject gc = GameObject.Find("GameControls");
         foreach (KeyValuePair<string, int> pair in gc.GetComponent<DontDestroy>().idList)

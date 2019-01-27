@@ -19,10 +19,12 @@ public class CameraCinematics : MonoBehaviour
     void Start()
     {
         GameObject[] showMissile = GameObject.FindGameObjectsWithTag("Player");
-
+       
         foreach (GameObject m in showMissile)
         {
-            if (m.transform.GetChild(0).gameObject.activeSelf) missiles.Add(m);
+            if (m.transform.GetChild(0).gameObject.activeSelf) {
+                missiles.Add(m);
+            }
         }
     }
 
@@ -52,6 +54,7 @@ public class CameraCinematics : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         foreach (GameObject m in missiles)
         {
+            print(m.name);
             m.GetComponentInChildren<Animator>().enabled = true;
         }
         GetComponent<CameraShake>().enabled = true;

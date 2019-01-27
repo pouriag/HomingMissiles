@@ -24,7 +24,6 @@ public class ColliderScript : MonoBehaviour {
     {
         xGrids = new List<float>() { 9.55f, 10.9f, 12.25f, 13.6f, 14.95f, 16.3f, 17.65f, 19f, 20.35f, 21.7f, 23.05f, 24.4f, 25.75f, 27.1f, 28.45f};
         yGrids = new List<float>() { 4.5f, 3.15f, 1.8f, 0.45f, -0.9f, -2.25f, -3.6f, -4.95f };
-
         usedGrids = new List<KeyValuePair<int, int>>();
     }
 

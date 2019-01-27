@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: a425d7bb538088542bfb6124e5a0ad4b, type: 2}
+    - target: {fileID: 9500000, guid: 74a2300b6b45fff45a0daabafc9a6bc9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 74a2300b6b45fff45a0daabafc9a6bc9, type: 3}
       propertyPath: m_AABB.m_Center.y
       value: -0.11764312
@@ -574,6 +578,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: a167c73c7284f9f41b201a29198629d7, type: 2}
+    - target: {fileID: 9500000, guid: bb6c5163c623aba40a8e5db5918ed3d4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: bb6c5163c623aba40a8e5db5918ed3d4, type: 3}
       propertyPath: m_AABB.m_Center.z
       value: 5.3435974
@@ -1099,6 +1107,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 1e63490e951935f42829222de90673bc, type: 2}
+    - target: {fileID: 9500000, guid: 143dcfd470b08d14d9271ede41ef9bb6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 143dcfd470b08d14d9271ede41ef9bb6, type: 3}
       propertyPath: m_AABB.m_Center.x
       value: 0.011074185
@@ -1178,6 +1190,7 @@ MonoBehaviour:
   child: {fileID: 1803588362}
   mainCam: {fileID: 519420028}
   explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
+  landCeleb: {fileID: 0}
   speed: 3
   itemTime: 5
   points: 0
@@ -1353,6 +1366,7 @@ MonoBehaviour:
   child: {fileID: 568865846}
   mainCam: {fileID: 519420028}
   explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
+  landCeleb: {fileID: 0}
   speed: 3
   itemTime: 5
   points: 0
@@ -1455,6 +1469,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: fcd21a3ef40fb0945b3830c34f14924b, type: 2}
+    - target: {fileID: 9500000, guid: 1be0a7a024b94f7409d1e991b2f2c17b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 1be0a7a024b94f7409d1e991b2f2c17b, type: 3}
       propertyPath: m_AABB.m_Center.y
       value: -0.00000023841858
@@ -2038,6 +2056,7 @@ MonoBehaviour:
   child: {fileID: 1580984209}
   mainCam: {fileID: 519420028}
   explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
+  landCeleb: {fileID: 0}
   speed: 3
   itemTime: 5
   points: 0
@@ -2118,6 +2137,7 @@ MonoBehaviour:
   child: {fileID: 2079743716}
   mainCam: {fileID: 519420028}
   explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
+  landCeleb: {fileID: 0}
   speed: 3
   itemTime: 5
   points: 0

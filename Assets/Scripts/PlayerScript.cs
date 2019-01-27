@@ -41,7 +41,8 @@ public class PlayerScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
-	}
+        if (!gameObject.transform.GetChild(0).gameObject.activeSelf) gameObject.GetComponent<BoxCollider>().enabled = false;
+    }
 
     private void Update()
     {
