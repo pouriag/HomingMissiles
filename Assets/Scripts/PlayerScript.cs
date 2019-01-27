@@ -16,6 +16,7 @@ public class PlayerScript : MonoBehaviour {
 
     public GameObject child;
     public GameObject mainCam;
+    public GameObject explode;
 
     public float speed;
     public float itemTime = 5f;
@@ -86,6 +87,7 @@ public class PlayerScript : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space) && firstHome)
         {
             mainCam.GetComponent<D2FogsPE>().enabled = true;
+            StartCoroutine(WaitForFog());
         }
     }
 
@@ -97,11 +99,11 @@ public class PlayerScript : MonoBehaviour {
     private void Move()
     {
 
-        moveHorizontal = Input.GetAxis("P"+id+" Horizontal");
-        moveVertical = Input.GetAxis("P" + id + " Vertical");
+        //moveHorizontal = Input.GetAxis("P"+id+" Horizontal");
+        //moveVertical = Input.GetAxis("P" + id + " Vertical");
 
-        //moveHorizontal = Input.GetAxis("Horizontal");
-        //moveVertical = Input.GetAxis("Vertical");
+        moveHorizontal = Input.GetAxis("Horizontal");
+        moveVertical = Input.GetAxis("Vertical");
 
         if (control)
         {
@@ -125,7 +127,10 @@ public class PlayerScript : MonoBehaviour {
             }
             else
             {
-                SavePoints(this.gameObject);
+                //SavePoints(this.gameObject); why are we saving points here?
+                Destroy(other.gameObject);
+                Instantiate(explode, transform.position, Quaternion.identity);
+                mainCam.GetComponent<CameraShake>().shakeDuration = 0.5f;
                 Destroy(this.gameObject);
             }
         }
@@ -134,12 +139,13 @@ public class PlayerScript : MonoBehaviour {
             char c = other.tag[other.tag.Length - 1];
             char i = id.ToString()[0];
 
-            if (other.tag[other.tag.Length - 1] == id.ToString()[0])
+            if (other.tag.Substring(6) == characterName)
             {
 
                 points = (int)(Time.timeSinceLevelLoad * 1.2);
                 if (SavePoints(this.gameObject) == 1) firstHome = true;
                 Destroy(child);
+                GetComponent<BoxCollider>().enabled = false;
             }
             else
             {
@@ -150,7 +156,10 @@ public class PlayerScript : MonoBehaviour {
                 }
                 else
                 {
-                    SavePoints(this.gameObject);
+                    //SavePoints(this.gameObject); and here?
+                    Destroy(other.gameObject);
+                    Instantiate(explode, transform.position, Quaternion.identity);
+                    mainCam.GetComponent<CameraShake>().shakeDuration = 0.5f;
                     Destroy(this.gameObject);
                 }
             }
@@ -176,13 +185,29 @@ public class PlayerScript : MonoBehaviour {
     private int SavePoints(GameObject gameObject)
     {
         Debug.Log(points);
-        GameObject.Find("Panel").GetComponent<ShowPoints>().points.Add(id, points);
-        return GameObject.Find("Panel").GetComponent<ShowPoints>().points.Count;
+        return 0;
+        //GameObject.Find("Panel").GetComponent<ShowPoints>().points.Add(id, points);
+        //return GameObject.Find("Panel").GetComponent<ShowPoints>().points.Count;
     }
 
     public void setId(int id){
 
         this.id = id;
 
+    }
+
+    private IEnumerator WaitForFog()
+    {
+        if (firstHome)
+        {
+            firstHome = false;
+            yield return new WaitForSeconds(5f);
+            mainCam.GetComponent<D2FogsPE>().enabled = false;
+        }
+        else
+        {
+            yield return new WaitForSeconds(10f);
+            firstHome = true;
+        }
     }
 }

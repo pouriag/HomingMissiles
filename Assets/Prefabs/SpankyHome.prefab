@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6431806930530146469}
+  - component: {fileID: 7604719438284785204}
   m_Layer: 0
   m_Name: SpankyHome
-  m_TagString: Untagged
+  m_TagString: TargetSpanky
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7604719438284785204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6508040688103039948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7, y: 10.84, z: 6.06}
+  m_Center: {x: 0.31, y: 5.3, z: 0.15}
 --- !u!1001 &7902772036691985731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,18 +99,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 97c07064f1aae4a43ac7acf1674c0eaf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 97c07064f1aae4a43ac7acf1674c0eaf, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 97c07064f1aae4a43ac7acf1674c0eaf, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 97c07064f1aae4a43ac7acf1674c0eaf, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97c07064f1aae4a43ac7acf1674c0eaf, type: 3}

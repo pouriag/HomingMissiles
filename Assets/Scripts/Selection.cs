@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Selection : MonoBehaviour
 {
     public const float DELAY_TIME = 25000f;
-    public string characterName = "";
     public int id ;
 
     private float moveHorizontal;
