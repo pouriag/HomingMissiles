@@ -92,7 +92,16 @@ public class ColliderScript : MonoBehaviour {
             float x = xGrids[xInd];
             float y = yGrids[yInd];
 
-            GameObject newObj = Instantiate(items[i], new Vector3(x, y, 0f), Quaternion.identity);
+            float xRot;
+
+            if (items[i].tag == "Speed"){
+                xRot = 180f;
+            }
+            else{
+                xRot = 0f;
+            }
+
+            GameObject newObj = Instantiate(items[i], new Vector3(x, y, 0f), Quaternion.Euler(xRot, -90f, 90f));
             newObj.transform.parent = road.transform;
         }
     }
