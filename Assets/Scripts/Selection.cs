@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Selection : MonoBehaviour
 {
+    public GameObject Foxy, Spanky, Bumpkin, Hottie;
     public const float DELAY_TIME = 25000f;
     public string characterName = "";
     public int id ;
@@ -47,10 +48,12 @@ public class Selection : MonoBehaviour
                     selected = false;
                 }
             }
+            ShowModel();
         }
         if (active && selected && Input.GetKey("joystick " + id + " button 4")){
             GameObject.Find("Main Camera").GetComponent<SceneLoader>().NextScene();
         }
+
 
     }
 
@@ -59,7 +62,7 @@ public class Selection : MonoBehaviour
         moveHorizontal = Input.GetAxis("P" + id + " Horizontal");
 
         if(moveHorizontal > 0 && gameObject.transform.position.x < 1441 && time == DELAY_TIME ){
-            gameObject.transform.position += new Vector3(400, 0, 0);
+            gameObject.transform.position += new Vector3(432, 0, 0);
             while (time > 0){
                 time -= Time.deltaTime * 0.1f;
             }
@@ -68,25 +71,52 @@ public class Selection : MonoBehaviour
 
         else if (moveHorizontal < 0 && gameObject.transform.position.x > 361 && time == DELAY_TIME)
         {
-            gameObject.transform.position -= new Vector3(400, 0, 0);
+            gameObject.transform.position -= new Vector3(432, 0, 0);
             while (time > 0)
             {
                 time -= Time.deltaTime * 0.1f;
             }
             time = DELAY_TIME;
         }
+       
     }
+
+    private void ShowModel (){
+        float pos = this.gameObject.transform.position.x;
+        print(pos);
+        switch (pos){
+            case 340:
+                Spanky.SetActive(true);
+                break;
+            case 772:
+                Hottie.SetActive(true);
+                break;
+            case 1204:
+                Bumpkin.SetActive(true);
+                break;
+            case 1636:
+                Foxy.SetActive(true);
+                break;
+            default:
+                Spanky.SetActive(false);
+                Hottie.SetActive(false);
+                Bumpkin.SetActive(false);
+                Foxy.SetActive(false);
+                break;
+        }
+    }
+
     private void select()
     {
         switch (gameObject.transform.position.x){
-            case 360 :
+            case 340:
                 if (!GameObject.Find("Spanky").GetComponent<SelectStatus>().get()){
                     GameObject.Find("Spanky").GetComponent<SelectStatus>().set(true);
                     GameObject.Find("GameControls").GetComponent<DontDestroy>().idList.Add("Spanky",id);
                     selected = true;
                 }
                 break;
-            case 760:
+            case 772:
                 if (!GameObject.Find("Bumpkin").GetComponent<SelectStatus>().get())
                 {
                     GameObject.Find("Bumpkin").GetComponent<SelectStatus>().set(true); 
@@ -94,7 +124,7 @@ public class Selection : MonoBehaviour
                     selected = true;
                 }
                 break;
-            case 1160:
+            case 1204:
                 if (!GameObject.Find("Hottie").GetComponent<SelectStatus>().get())
                 {
                     GameObject.Find("Hottie").GetComponent<SelectStatus>().set(true);
@@ -102,7 +132,7 @@ public class Selection : MonoBehaviour
                     selected = true;
                 }
                 break;
-            case 1560:
+            case 1636:
                 if (!GameObject.Find("Foxy").GetComponent<SelectStatus>().get())
                 {
                     GameObject.Find("Foxy").GetComponent<SelectStatus>().set(true);
