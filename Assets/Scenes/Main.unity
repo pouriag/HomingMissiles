@@ -248,7 +248,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90336229}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.8643513, y: 4, z: -1}
+  m_LocalPosition: {x: -3.8643513, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46445099}
@@ -689,7 +689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513151731}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.336, y: 4, z: -1}
+  m_LocalPosition: {x: 15.336, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46445099}
@@ -711,6 +711,7 @@ GameObject:
   - component: {fileID: 519420036}
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
+  - component: {fileID: 519420037}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -843,32 +844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66ffa3b4ded34a38a5805b4b524a5f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
-  m_Name: 
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -885,6 +860,102 @@ MonoBehaviour:
   shakeDuration: 0
   shakeAmount: 0.7
   decreaseFactor: 1
+--- !u!82 &519420037
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3a630e7837ac428468c2d2b46b3e2a53, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &523183078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,6 +1275,8 @@ MonoBehaviour:
   child: {fileID: 1803588362}
   mainCam: {fileID: 519420028}
   explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
+  landCeleb: {fileID: 3111315544062968088, guid: c7439cebd9fc9f74ab2fd857a6d4df4d,
+    type: 3}
   speed: 3
   itemTime: 5
   points: 0
@@ -1326,7 +1399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900821669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.064, y: 4, z: -1}
+  m_LocalPosition: {x: -23.064, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46445099}
@@ -1379,6 +1452,8 @@ MonoBehaviour:
   child: {fileID: 568865846}
   mainCam: {fileID: 519420028}
   explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
+  landCeleb: {fileID: 8894583468634696934, guid: f5bff01668bc1d84296956695e41be17,
+    type: 3}
   speed: 3
   itemTime: 5
   points: 0
@@ -2064,6 +2139,8 @@ MonoBehaviour:
   child: {fileID: 1580984209}
   mainCam: {fileID: 519420028}
   explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
+  landCeleb: {fileID: 8536776290153161116, guid: fed201906cb68904eb21513cba3ecb2b,
+    type: 3}
   speed: 3
   itemTime: 5
   points: 0
@@ -2144,6 +2221,8 @@ MonoBehaviour:
   child: {fileID: 2079743716}
   mainCam: {fileID: 519420028}
   explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
+  landCeleb: {fileID: 635816874338119361, guid: e01c2d7023fbeda49b416e86a35ef1a8,
+    type: 3}
   speed: 3
   itemTime: 5
   points: 0
@@ -2293,7 +2372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794149777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.536, y: 4, z: -1}
+  m_LocalPosition: {x: 34.536, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46445099}

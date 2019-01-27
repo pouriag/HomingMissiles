@@ -17,6 +17,7 @@ public class PlayerScript : MonoBehaviour {
     public GameObject child;
     public GameObject mainCam;
     public GameObject explode;
+    public GameObject landCeleb;
 
     public float speed;
     public float itemTime = 5f;
@@ -142,6 +143,7 @@ public class PlayerScript : MonoBehaviour {
             if (other.tag.Substring(6) == characterName)
             {
 
+                Instantiate(landCeleb, transform.position, Quaternion.identity);
                 points = (int)(Time.timeSinceLevelLoad * 1.2);
                 if (SavePoints(this.gameObject) == 1) firstHome = true;
                 Destroy(child);
@@ -185,8 +187,9 @@ public class PlayerScript : MonoBehaviour {
     private int SavePoints(GameObject gameObject)
     {
         Debug.Log(points);
-        GameObject.Find("Panel").GetComponent<ShowPoints>().points.Add(id, points);
-        return GameObject.Find("Panel").GetComponent<ShowPoints>().points.Count;
+        return 0;
+        //GameObject.Find("Panel").GetComponent<ShowPoints>().points.Add(id, points);
+        //return GameObject.Find("Panel").GetComponent<ShowPoints>().points.Count;
     }
 
     public void setId(int id){
