@@ -294,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 74a2300b6b45fff45a0daabafc9a6bc9, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 74a2300b6b45fff45a0daabafc9a6bc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -593,8 +593,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 1
+  field of view: 65
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -702,8 +702,8 @@ MonoBehaviour:
   road: {fileID: 46445098}
   spawnables:
   - {fileID: 2238540286994939125, guid: 575376686fdfb124eb0641f435473839, type: 3}
-  - {fileID: 7357594342225351346, guid: 8e4d3ea5c0729db45aa9039f0cd255ae, type: 3}
-  - {fileID: 8905702278516770815, guid: cdeed5e58588bb149b6dc87372593591, type: 3}
+  - {fileID: 9189756799126382907, guid: c179273c70e48624aac196c870513a45, type: 3}
+  - {fileID: 4269421855916200501, guid: 02cb35125f26d04448d813696062e68b, type: 3}
   items:
   - {fileID: 8557810038585284251, guid: 37cb6f32590e55e4c9293561d9c97425, type: 3}
   - {fileID: 7033791152387392540, guid: dbe0b1e07c729f0458135add09aade80, type: 3}
@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: 1545760902}
   m_Layer: 0
   m_Name: Border (1)
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1216,7 +1216,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 21.5, y: 1, z: 1}
+  m_Size: {x: 55, y: 1, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1644877003
 GameObject:
@@ -1416,7 +1416,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 14, z: 1}
+  m_Size: {x: 1, y: 14, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1777524486
 GameObject:
@@ -1460,7 +1460,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 14, z: 1}
+  m_Size: {x: 1, y: 14, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1838258686
 GameObject:
@@ -1543,7 +1543,7 @@ GameObject:
   - component: {fileID: 2108774519}
   m_Layer: 0
   m_Name: Border
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1573,5 +1573,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 21.5, y: 1, z: 1}
+  m_Size: {x: 55, y: 1, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
