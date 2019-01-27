@@ -5,6 +5,7 @@ using UnityEngine;
 public class ExplodeScript : MonoBehaviour
 {
     public List<AudioClip> audios;
+    public float waitTime = 1f;
 
     private void Awake()
     {
@@ -20,7 +21,7 @@ public class ExplodeScript : MonoBehaviour
 
     IEnumerator WaitAndDestroy()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(waitTime);
         Destroy(this.gameObject);
     }
 }
