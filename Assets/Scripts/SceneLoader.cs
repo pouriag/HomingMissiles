@@ -10,7 +10,7 @@ public class SceneLoader : MonoBehaviour
     private GameObject missile;
     int currScene = -1;
     // Use this for initialization
-    void Awake()
+    void Start()
     {
         currScene = SceneManager.GetActiveScene().buildIndex;
        
@@ -23,7 +23,7 @@ public class SceneLoader : MonoBehaviour
         if (currScene == 4 && missiles.Length < 1) 
         {
             GameObject.Find("Roads").GetComponent<BackgroundScript>().scrollSpeed = 0;
-            panel.SetActive(true);
+            panel.GetComponent<Image>().enabled = true;
         }
         
         if (currScene == 0 || currScene == 1)

@@ -13,6 +13,7 @@ TagManager:
   - Control
   - Border
   - Child
+  - ScoreBoard
   layers:
   - Default
   - TransparentFX

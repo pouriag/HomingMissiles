@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class activator : MonoBehaviour
+public class Activator : MonoBehaviour
 {
     public GameObject foxy;
     public GameObject spanky;
@@ -14,7 +14,8 @@ public class activator : MonoBehaviour
         GameObject gc = GameObject.Find("GameControls");
         foreach (KeyValuePair<string, int> pair in gc.GetComponent<DontDestroy>().idList)
         {
-            switch(pair.Key){
+            switch (pair.Key)
+            {
                 case "Foxy":
                     foxy.SetActive(true);
                     foxy.GetComponent<PlayerScript>().setId(pair.Value);
@@ -35,11 +36,5 @@ public class activator : MonoBehaviour
             }
 
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

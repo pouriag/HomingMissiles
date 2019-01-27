@@ -125,6 +125,7 @@ public class PlayerScript : MonoBehaviour {
             }
             else
             {
+                SavePoints(this.gameObject);
                 Destroy(this.gameObject);
             }
         }
@@ -149,6 +150,7 @@ public class PlayerScript : MonoBehaviour {
                 }
                 else
                 {
+                    SavePoints(this.gameObject);
                     Destroy(this.gameObject);
                 }
             }
@@ -173,8 +175,8 @@ public class PlayerScript : MonoBehaviour {
 
     private int SavePoints(GameObject gameObject)
     {
-
-        GameObject.Find("Panel").GetComponent<ShowPoints>().points.Add(id, gameObject.GetComponent<PlayerScript>().points);
+        Debug.Log(points);
+        GameObject.Find("Panel").GetComponent<ShowPoints>().points.Add(id, points);
         return GameObject.Find("Panel").GetComponent<ShowPoints>().points.Count;
     }
 
