@@ -14,51 +14,63 @@ public class PlayerScript : MonoBehaviour {
 
     public float speed;
     public int id = 1;
-    public float itemTime = 10f;
+    public float itemTime = 5f;
 
     private float moveHorizontal;
     private float moveVertical;
-    private Rigidbody2D rigidBody;
+    private Rigidbody rigidBody;
     private Items activeItem;
-    private float activeItemTime = 0;
+    private bool itemActive = false;
     private float activeItemStartTime = 0;
 
     private bool shield = false;
     private bool control = false;
+    private bool xspeed = false;
 
     // Use this for initialization
     void Start () {
-        rigidBody = GetComponent<Rigidbody2D>();
+        rigidBody = GetComponent<Rigidbody>();
 	}
 
     private void Update()
     {
-        if (activeItem != Items.None)
+        if (itemActive)
         {
-            activeItemTime += Time.deltaTime;
-            if (activeItemTime - activeItemStartTime > itemTime)
+            if (Time.timeSinceLevelLoad - activeItemStartTime > itemTime)
             {
                 control = false;
                 shield = false;
+                if (xspeed)
+                {
+                    xspeed = false;
+                    GameObject.FindObjectOfType<BackgroundScript>().scrollSpeed -= 3f;
+                }
                 activeItem = 0;
                 activeItem = Items.None;
+                itemActive = false;
             }
         }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (activeItem == Items.Control)
             {
                 control = true;
-                activeItemStartTime = Time.deltaTime;
+                itemActive = true;
+                activeItemStartTime = Time.timeSinceLevelLoad;
             }
             else if (activeItem == Items.Shield)
             {
                 shield = true;
-                activeItemStartTime = Time.deltaTime;
+                itemActive = true;
+                activeItemStartTime = Time.timeSinceLevelLoad;
             }
             else if (activeItem == Items.Speed)
             {
-                activeItemStartTime = Time.deltaTime;
+                GameObject.FindObjectOfType<BackgroundScript>().scrollSpeed += 3f;
+                xspeed = true;
+                itemActive = true;
+                activeItemStartTime = Time.timeSinceLevelLoad;
             }
         }
     }
@@ -79,23 +91,25 @@ public class PlayerScript : MonoBehaviour {
 
         if (control)
         {
-            rigidBody.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
+            rigidBody.velocity = new Vector3(moveHorizontal * speed, moveVertical * speed, 0f);
         }
         else
         {
-            rigidBody.AddForce(new Vector2(moveHorizontal * speed, moveVertical * speed));
+            Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
+            rigidBody.AddForce(movement * speed);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        Collider2D other = collision.collider;
+        Collider other = collision.collider;
 
         if (other.tag == "Obstacle")
         {
             if (shield)
             {
                 shield = false;
+                transform.position = new Vector3(other.transform.position.x + 1.5f, transform.position.y, transform.position.z);
             }
             else
             {
@@ -116,12 +130,32 @@ public class PlayerScript : MonoBehaviour {
                 if (shield)
                 {
                     shield = false;
+                    transform.position = new Vector3(other.transform.position.x + 1.5f, transform.position.y, transform.position.z);
                 }
                 else
                 {
-                    Destroy(this.gameObject);
+                    Destroy(this.gameObject);                    
                 }
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Control")
+        {
+            Destroy(other.gameObject);
+            activeItem = Items.Control;
+        }
+        else if (other.tag == "Shield")
+        {
+            Destroy(other.gameObject);
+            activeItem = Items.Shield;
+        }
+        else if (other.tag == "Speed")
+        {
+            Destroy(other.gameObject);
+            activeItem = Items.Speed;
         }
     }
 }
