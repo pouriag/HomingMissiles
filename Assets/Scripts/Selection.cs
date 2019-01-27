@@ -15,6 +15,9 @@ public class Selection : MonoBehaviour
     private bool selected = false;
     private float time = DELAY_TIME; 
 
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +38,7 @@ public class Selection : MonoBehaviour
                 Move();
                 if (Input.GetKey("joystick " + id + " button 11"))
                 {
-                    select();
+                    Select();
                     ready = true;
                 }
             }
@@ -44,7 +47,7 @@ public class Selection : MonoBehaviour
                 if (Input.GetKey("joystick " + id + " button 12"))
                 {
                     ready = false;
-                    selected = false;
+                    Deselect();
                 }
             }
             ShowModel();
@@ -86,7 +89,6 @@ public class Selection : MonoBehaviour
 
     private void ShowModel (){
         float pos = this.gameObject.transform.position.x;
-        print(pos);
         switch (pos){
             case 340:
                 Spanky.SetActive(true);
@@ -108,14 +110,55 @@ public class Selection : MonoBehaviour
                 break;
         }
     }
-
-    private void select()
+    private void Deselect(){
+        switch (gameObject.transform.position.x)
+        {
+            case 340:
+                if (!GameObject.Find("Spanky").GetComponent<SelectStatus>().get())
+                {
+                    GameObject.Find("Spanky").GetComponent<SelectStatus>().set(false);
+                    GameObject.Find("GameControls").GetComponent<DontDestroy>().idList.Remove("Spanky");
+                    GameObject.Find("SpankyName").GetComponent<Image>().enabled = false;
+                    selected = false;
+                }
+                break;
+            case 772:
+                if (!GameObject.Find("Hottie").GetComponent<SelectStatus>().get())
+                {
+                    GameObject.Find("Hottie").GetComponent<SelectStatus>().set(false);
+                    GameObject.Find("GameControls").GetComponent<DontDestroy>().idList.Remove("Hottie");
+                    GameObject.Find("HottieName").GetComponent<Image>().enabled = false;
+                    selected = false;
+                }
+                break;
+            case 1204:
+                if (!GameObject.Find("Bumpkin").GetComponent<SelectStatus>().get())
+                {
+                    GameObject.Find("Bumpkin").GetComponent<SelectStatus>().set(false);
+                    GameObject.Find("GameControls").GetComponent<DontDestroy>().idList.Remove("Bumpkin");
+                    GameObject.Find("BumpkinName").GetComponent<Image>().enabled = false;
+                    selected = false;
+                }
+                break;
+            case 1636:
+                if (!GameObject.Find("Foxy").GetComponent<SelectStatus>().get())
+                {
+                    GameObject.Find("Foxy").GetComponent<SelectStatus>().set(false);
+                    GameObject.Find("GameControls").GetComponent<DontDestroy>().idList.Remove("Foxy");
+                    GameObject.Find("FoxyName").GetComponent<Image>().enabled = false;
+                    selected = false;
+                }
+                break;
+        }
+    }
+    private void Select()
     {
         switch (gameObject.transform.position.x){
             case 340:
                 if (!GameObject.Find("Spanky").GetComponent<SelectStatus>().get()){
                     GameObject.Find("Spanky").GetComponent<SelectStatus>().set(true);
                     GameObject.Find("GameControls").GetComponent<DontDestroy>().idList.Add("Spanky",id);
+                    GameObject.Find("SpankyName").GetComponent<Image>().enabled = true;
                     selected = true;
                 }
                 break;
@@ -124,6 +167,7 @@ public class Selection : MonoBehaviour
                 {
                     GameObject.Find("Hottie").GetComponent<SelectStatus>().set(true); 
                     GameObject.Find("GameControls").GetComponent<DontDestroy>().idList.Add("Hottie", id);
+                    GameObject.Find("HottieName").GetComponent<Image>().enabled = true;
                     selected = true;
                 }
                 break;
@@ -132,6 +176,7 @@ public class Selection : MonoBehaviour
                 {
                     GameObject.Find("Bumpkin").GetComponent<SelectStatus>().set(true);
                     GameObject.Find("GameControls").GetComponent<DontDestroy>().idList.Add("Bumpkin", id);
+                    GameObject.Find("BumpkinName").GetComponent<Image>().enabled = true;
                     selected = true;
                 }
                 break;
@@ -140,6 +185,7 @@ public class Selection : MonoBehaviour
                 {
                     GameObject.Find("Foxy").GetComponent<SelectStatus>().set(true);
                     GameObject.Find("GameControls").GetComponent<DontDestroy>().idList.Add("Foxy", id);
+                    GameObject.Find("FoxyName").GetComponent<Image>().enabled = true;
                     selected = true;
                 }
                 break;
