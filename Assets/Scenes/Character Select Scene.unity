@@ -511,7 +511,7 @@ MonoBehaviour:
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: P1 Use
-  m_CancelButton: Cancel
+  m_CancelButton: P1 Land
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0

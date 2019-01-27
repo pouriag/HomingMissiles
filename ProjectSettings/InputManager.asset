@@ -183,12 +183,12 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: P1 Use
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName: P1 Use
+    descriptiveNegativeName: P1 Use
+    negativeButton: joystick 1 button 11
     positiveButton: joystick 1 button 11
-    altNegativeButton: 
-    altPositiveButton: joystick 1 button 8
+    altNegativeButton: joystick 1 button 11
+    altPositiveButton: joystick 1 button 11
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
