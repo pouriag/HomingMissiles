@@ -8,6 +8,8 @@ public class TankScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.rotation = Quaternion.Euler(0f, -90f, 90f);
+
         int rand = Random.Range(1, 3);
 
         if (rand == 2)
@@ -37,7 +39,7 @@ public class TankScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Border")
+        if (other.tag == "Border" || other.tag == "Obstacle" || other.tag.StartsWith("Target"))
         {
             turned = turned ? false : true;
 
