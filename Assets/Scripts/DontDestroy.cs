@@ -7,7 +7,8 @@ public class DontDestroy : MonoBehaviour
 
 
     public static DontDestroy Instance;
-    public Dictionary<int,string> idList = new Dictionary<int, string>();
+
+    public Dictionary<string,int> idList = new Dictionary<string,int>();
 
     private void Awake()
     {

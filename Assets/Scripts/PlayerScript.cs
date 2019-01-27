@@ -16,11 +16,13 @@ public class PlayerScript : MonoBehaviour {
 
     public GameObject child;
     public GameObject mainCam;
+
     public float speed;
-    public int id = 1;
     public float itemTime = 5f;
     public int points = 0;
     public string characterName = "";
+
+    private int id;
 
     private float moveHorizontal;
     private float moveVertical;
@@ -37,7 +39,6 @@ public class PlayerScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
-        //characterName = GameObject.Find("").name;
 	}
 
     private void Update()
@@ -96,11 +97,11 @@ public class PlayerScript : MonoBehaviour {
     private void Move()
     {
 
-        //moveHorizontal = Input.GetAxis("P"+id+" Horizontal");
-        //moveVertical = Input.GetAxis("P" + id + " Vertical");
+        moveHorizontal = Input.GetAxis("P"+id+" Horizontal");
+        moveVertical = Input.GetAxis("P" + id + " Vertical");
 
-        moveHorizontal = Input.GetAxis("Horizontal");
-        moveVertical = Input.GetAxis("Vertical");
+        //moveHorizontal = Input.GetAxis("Horizontal");
+        //moveVertical = Input.GetAxis("Vertical");
 
         if (control)
         {
@@ -176,5 +177,10 @@ public class PlayerScript : MonoBehaviour {
         GameObject.Find("Panel").GetComponent<ShowPoints>().points.Add(id, gameObject.GetComponent<PlayerScript>().points);
         return GameObject.Find("Panel").GetComponent<ShowPoints>().points.Count;
     }
-    
+
+    public void setId(int id){
+
+        this.id = id;
+
+    }
 }

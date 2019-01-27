@@ -7,15 +7,18 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public GameObject panel;
+    private GameObject missile;
     int currScene = -1;
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         currScene = SceneManager.GetActiveScene().buildIndex;
+       
     }
 
     void Update()
     {
+
         GameObject [] missiles = GameObject.FindGameObjectsWithTag("Child");
         if (currScene == 4 && missiles.Length < 1) 
         {
