@@ -59,6 +59,8 @@ public class CameraCinematics : MonoBehaviour
         }
         GetComponent<CameraShake>().enabled = true;
         GameObject.FindObjectOfType<BackgroundScript>().scrollSpeed = 5f;
-        //GetComponent<AudioSource>().clip = music;
+        GetComponent<AudioSource>().clip = music;
+        GetComponent<AudioSource>().loop = true;
+        GetComponent<AudioSource>().Play();
     }
 }
