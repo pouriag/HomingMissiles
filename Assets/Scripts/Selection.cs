@@ -63,9 +63,14 @@ public class Selection : MonoBehaviour
 
         if(moveHorizontal > 0 && gameObject.transform.position.x < 1441 && time == DELAY_TIME ){
             gameObject.transform.position += new Vector3(432, 0, 0);
-            foreach (GameObject go in playerSelects){
 
+            foreach (GameObject go in playerSelects){
+                if (go.activeSelf && go.transform.position.x == gameObject.transform.position.x && gameObject.transform.position.x < 1441){
+                    gameObject.transform.position += new Vector3(432, 0, 0);
+                }
+                else if(go.activeSelf && go.transform.position.x == gameObject.transform.position.x) gameObject.transform.position -= new Vector3(432, 0, 0);
             }
+
             while (time > 0){
                 time -= Time.deltaTime * 0.1f;
             }
@@ -75,6 +80,14 @@ public class Selection : MonoBehaviour
         else if (moveHorizontal < 0 && gameObject.transform.position.x > 361 && time == DELAY_TIME)
         {
             gameObject.transform.position -= new Vector3(432, 0, 0);
+            foreach (GameObject go in playerSelects)
+            {
+                if (go.activeSelf && go.transform.position.x == gameObject.transform.position.x && gameObject.transform.position.x >361)
+                {
+                    gameObject.transform.position -= new Vector3(432, 0, 0);
+                }
+                else if (go.activeSelf && go.transform.position.x == gameObject.transform.position.x) gameObject.transform.position += new Vector3(432, 0, 0);
+            }
             while (time > 0)
             {
                 time -= Time.deltaTime * 0.1f;

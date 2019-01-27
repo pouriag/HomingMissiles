@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 387893207}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: PlayerSelect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,7 +367,6 @@ MonoBehaviour:
   Spanky: {fileID: 1515322043}
   Bumpkin: {fileID: 609996030}
   Hottie: {fileID: 1350219529}
-  characterName: 
   id: 1
 --- !u!1 &467598754
 GameObject:
@@ -383,7 +382,7 @@ GameObject:
   - component: {fileID: 467598759}
   m_Layer: 0
   m_Name: Player 3
-  m_TagString: Untagged
+  m_TagString: PlayerSelect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -458,7 +457,6 @@ MonoBehaviour:
   Spanky: {fileID: 1515322043}
   Bumpkin: {fileID: 609996030}
   Hottie: {fileID: 1350219529}
-  characterName: 
   id: 3
 --- !u!1 &473899169
 GameObject:
@@ -471,7 +469,7 @@ GameObject:
   - component: {fileID: 473899170}
   m_Layer: 0
   m_Name: HottieSpawner
-  m_TagString: PlayerSelect
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -838,7 +836,7 @@ GameObject:
   - component: {fileID: 789459364}
   m_Layer: 0
   m_Name: Player 4
-  m_TagString: Untagged
+  m_TagString: PlayerSelect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -913,7 +911,6 @@ MonoBehaviour:
   Spanky: {fileID: 1515322043}
   Bumpkin: {fileID: 609996030}
   Hottie: {fileID: 1350219529}
-  characterName: 
   id: 4
 --- !u!1 &822573760
 GameObject:
@@ -929,7 +926,7 @@ GameObject:
   - component: {fileID: 822573765}
   m_Layer: 0
   m_Name: Player 2
-  m_TagString: Untagged
+  m_TagString: PlayerSelect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1004,7 +1001,6 @@ MonoBehaviour:
   Spanky: {fileID: 1515322043}
   Bumpkin: {fileID: 609996030}
   Hottie: {fileID: 1350219529}
-  characterName: 
   id: 2
 --- !u!4 &872884091 stripped
 Transform:
@@ -1130,7 +1126,7 @@ GameObject:
   - component: {fileID: 983976714}
   m_Layer: 0
   m_Name: FoxySpawner
-  m_TagString: PlayerSelect
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1286,7 +1282,7 @@ GameObject:
   - component: {fileID: 1583589706}
   m_Layer: 0
   m_Name: SpankySpawner
-  m_TagString: PlayerSelect
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1698,7 +1694,7 @@ GameObject:
   - component: {fileID: 2047549463}
   m_Layer: 0
   m_Name: BumpkinSpawner
-  m_TagString: PlayerSelect
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
