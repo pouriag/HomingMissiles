@@ -13,6 +13,8 @@ public enum Items
 
 public class PlayerScript : MonoBehaviour {
 
+    public GameObject child;
+    public GameObject mainCam;
     public float speed;
     public int id = 1;
     public float itemTime = 5f;
@@ -27,6 +29,7 @@ public class PlayerScript : MonoBehaviour {
     private bool shield = false;
     private bool control = false;
     private bool xspeed = false;
+    private bool firstDead = false;
 
     // Use this for initialization
     void Start () {
@@ -73,6 +76,11 @@ public class PlayerScript : MonoBehaviour {
                 itemActive = true;
                 activeItemStartTime = Time.timeSinceLevelLoad;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && firstDead)
+        {
+            mainCam.GetComponent<D2FogsPE>().enabled = true;
         }
     }
 
@@ -125,7 +133,7 @@ public class PlayerScript : MonoBehaviour {
 
                 points = (int)(Time.timeSinceLevelLoad * 1.2);
                 print(points);
-                Destroy(this.gameObject);
+                child.SetActive(false);
             }
             else
             {
