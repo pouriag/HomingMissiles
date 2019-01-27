@@ -37,7 +37,7 @@ public class TankScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Border")
+        if (other.tag == "Border" || other.tag == "Obstacle" || other.tag.StartsWith("Target"))
         {
             turned = turned ? false : true;
 
