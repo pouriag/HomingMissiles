@@ -1190,7 +1190,8 @@ MonoBehaviour:
   child: {fileID: 1803588362}
   mainCam: {fileID: 519420028}
   explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
-  landCeleb: {fileID: 0}
+  landCeleb: {fileID: 3111315544062968088, guid: c7439cebd9fc9f74ab2fd857a6d4df4d,
+    type: 3}
   speed: 3
   itemTime: 5
   points: 0
@@ -1366,7 +1367,8 @@ MonoBehaviour:
   child: {fileID: 568865846}
   mainCam: {fileID: 519420028}
   explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
-  landCeleb: {fileID: 0}
+  landCeleb: {fileID: 8894583468634696934, guid: f5bff01668bc1d84296956695e41be17,
+    type: 3}
   speed: 3
   itemTime: 5
   points: 0
@@ -2056,7 +2058,8 @@ MonoBehaviour:
   child: {fileID: 1580984209}
   mainCam: {fileID: 519420028}
   explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
-  landCeleb: {fileID: 0}
+  landCeleb: {fileID: 8536776290153161116, guid: fed201906cb68904eb21513cba3ecb2b,
+    type: 3}
   speed: 3
   itemTime: 5
   points: 0
@@ -2137,7 +2140,8 @@ MonoBehaviour:
   child: {fileID: 2079743716}
   mainCam: {fileID: 519420028}
   explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
-  landCeleb: {fileID: 0}
+  landCeleb: {fileID: 635816874338119361, guid: e01c2d7023fbeda49b416e86a35ef1a8,
+    type: 3}
   speed: 3
   itemTime: 5
   points: 0

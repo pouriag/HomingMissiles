@@ -37,75 +37,87 @@ public class PlayerScript : MonoBehaviour {
     private bool control = false;
     private bool xspeed = false;
     private bool firstHome = false;
+    private bool hasChild = false;
 
     // Use this for initialization
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
         if (!gameObject.transform.GetChild(0).gameObject.activeSelf) gameObject.GetComponent<BoxCollider>().enabled = false;
+
     }
 
     private void Update()
     {
-        if (itemActive)
-        {
-            if (Time.timeSinceLevelLoad - activeItemStartTime > itemTime)
+        if(!hasChild){
+            if (gameObject.transform.GetChild(0).gameObject.activeSelf)
             {
-                control = false;
-                shield = false;
-                if (xspeed)
+                hasChild = true;
+            }
+        }
+
+        if(hasChild){
+            if (itemActive)
+            {
+                if (Time.timeSinceLevelLoad - activeItemStartTime > itemTime)
                 {
-                    xspeed = false;
-                    GameObject.FindObjectOfType<BackgroundScript>().scrollSpeed -= 3f;
+                    control = false;
+                    shield = false;
+                    if (xspeed)
+                    {
+                        xspeed = false;
+                        GameObject.FindObjectOfType<BackgroundScript>().scrollSpeed -= 3f;
+                    }
+                    activeItem = 0;
+                    activeItem = Items.None;
+                    itemActive = false;
                 }
-                activeItem = 0;
-                activeItem = Items.None;
-                itemActive = false;
             }
-        }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (activeItem == Items.Control)
+            if (Input.GetKeyDown("joystick "+ id+ " button 11") )
             {
-                control = true;
-                itemActive = true;
-                activeItemStartTime = Time.timeSinceLevelLoad;
+                if (activeItem == Items.Control)
+                {
+                    control = true;
+                    itemActive = true;
+                    activeItemStartTime = Time.timeSinceLevelLoad;
+                }
+                else if (activeItem == Items.Shield)
+                {
+                    shield = true;
+                    itemActive = true;
+                    activeItemStartTime = Time.timeSinceLevelLoad;
+                }
+                else if (activeItem == Items.Speed)
+                {
+                    GameObject.FindObjectOfType<BackgroundScript>().scrollSpeed += 3f;
+                    xspeed = true;
+                    itemActive = true;
+                    activeItemStartTime = Time.timeSinceLevelLoad;
+                }
             }
-            else if (activeItem == Items.Shield)
-            {
-                shield = true;
-                itemActive = true;
-                activeItemStartTime = Time.timeSinceLevelLoad;
-            }
-            else if (activeItem == Items.Speed)
-            {
-                GameObject.FindObjectOfType<BackgroundScript>().scrollSpeed += 3f;
-                xspeed = true;
-                itemActive = true;
-                activeItemStartTime = Time.timeSinceLevelLoad;
-            }
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space) && firstHome)
-        {
-            mainCam.GetComponent<D2FogsPE>().enabled = true;
-            StartCoroutine(WaitForFog());
+            if (Input.GetKeyDown("joystick " + id + " button 11") && firstHome)
+            {
+                mainCam.GetComponent<D2FogsPE>().enabled = true;
+                StartCoroutine(WaitForFog());
+            }
         }
     }
 
     void FixedUpdate ()
     {
-        Move();
+        if (hasChild)
+            Move();
 	}
 
     private void Move()
     {
 
-        //moveHorizontal = Input.GetAxis("P"+id+" Horizontal");
-        //moveVertical = Input.GetAxis("P" + id + " Vertical");
+        moveHorizontal = Input.GetAxis("P"+id+" Horizontal");
+        moveVertical = Input.GetAxis("P" + id + " Vertical");
 
-        moveHorizontal = Input.GetAxis("Horizontal");
-        moveVertical = Input.GetAxis("Vertical");
+        //moveHorizontal = Input.GetAxis("Horizontal");
+        //moveVertical = Input.GetAxis("Vertical");
 
         if (control)
         {
