@@ -44,6 +44,9 @@ public class Selection : MonoBehaviour
                 }
             }
         }
+        if (active && Input.GetKey("joystick " + id + " button 4")){
+            GameObject.Find("Main Camera").GetComponent<SceneLoader>().NextScene();
+        }
 
     }
 
