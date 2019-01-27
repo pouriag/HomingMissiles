@@ -18,9 +18,11 @@ public class CameraCinematics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach (GameObject m in missiles)
+        GameObject[] showMissile = GameObject.FindGameObjectsWithTag("Player");
+
+        foreach (GameObject m in showMissile)
         {
-            m.GetComponentInChildren<Animator>().enabled = false;
+            if (m.transform.GetChild(0).gameObject.activeSelf) missiles.Add(m);
         }
     }
 

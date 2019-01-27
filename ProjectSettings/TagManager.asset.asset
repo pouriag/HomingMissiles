@@ -13,6 +13,9 @@ TagManager:
   - Border
   - Child
   - ScoreBoard
+<<<<<<< HEAD
+  - PlayerSelect
+=======
   - Target3
   - Target4
   - TargetHottie
@@ -20,7 +23,7 @@ TagManager:
   - TargetFoxy
   - TargetBumpkin
   - Target1
-  - PlayerSelect
+>>>>>>> 81f13f8004d83469ad1c383b822e58991b31d53d
   layers:
   - Default
   - TransparentFX
