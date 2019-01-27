@@ -70,7 +70,8 @@ public class ColliderScript : MonoBehaviour {
             float x = xGrids[xInd];
             float y = yGrids[yInd];
 
-            GameObject newObj = Instantiate(spawnables[i], new Vector3(x, y, 0f), Quaternion.Euler(0f, -90f, 90f));
+            float xRot = Random.Range(0f, 360f);
+            GameObject newObj = Instantiate(spawnables[i], new Vector3(x, y, 0f), Quaternion.Euler(xRot, -90f, 90f));
             newObj.transform.parent = road.transform;
         }
 
