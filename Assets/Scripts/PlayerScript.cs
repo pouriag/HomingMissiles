@@ -127,7 +127,7 @@ public class PlayerScript : MonoBehaviour {
             }
             else
             {
-                //SavePoints(this.gameObject); why are we saving points here?
+                SavePoints(this.gameObject);
                 Destroy(other.gameObject);
                 Instantiate(explode, transform.position, Quaternion.identity);
                 mainCam.GetComponent<CameraShake>().shakeDuration = 0.5f;
@@ -156,7 +156,7 @@ public class PlayerScript : MonoBehaviour {
                 }
                 else
                 {
-                    //SavePoints(this.gameObject); and here?
+                    SavePoints(this.gameObject);
                     Destroy(other.gameObject);
                     Instantiate(explode, transform.position, Quaternion.identity);
                     mainCam.GetComponent<CameraShake>().shakeDuration = 0.5f;
@@ -185,9 +185,8 @@ public class PlayerScript : MonoBehaviour {
     private int SavePoints(GameObject gameObject)
     {
         Debug.Log(points);
-        return 0;
-        //GameObject.Find("Panel").GetComponent<ShowPoints>().points.Add(id, points);
-        //return GameObject.Find("Panel").GetComponent<ShowPoints>().points.Count;
+        GameObject.Find("Panel").GetComponent<ShowPoints>().points.Add(id, points);
+        return GameObject.Find("Panel").GetComponent<ShowPoints>().points.Count;
     }
 
     public void setId(int id){
