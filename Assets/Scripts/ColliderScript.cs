@@ -15,6 +15,8 @@ public class ColliderScript : MonoBehaviour {
 
     private List<float> xGrids, yGrids;
 
+    private List<KeyValuePair<int, int>> usedGrids;
+
     private float locStartTime = 0;
 
     // Use this for initialization
@@ -22,6 +24,8 @@ public class ColliderScript : MonoBehaviour {
     {
         xGrids = new List<float>() { 9.55f, 10.9f, 12.25f, 13.6f, 14.95f, 16.3f, 17.65f, 19f, 20.35f, 21.7f, 23.05f, 24.4f, 25.75f, 27.1f, 28.45f};
         yGrids = new List<float>() { 4.5f, 3.15f, 1.8f, 0.45f, -0.9f, -2.25f, -3.6f, -4.95f };
+
+        usedGrids = new List<KeyValuePair<int, int>>();
     }
 
     // Update is called once per frame
@@ -45,9 +49,6 @@ public class ColliderScript : MonoBehaviour {
 
     public void SpawnObjects()
     {
-        List<int> usedXGrids = new List<int>();
-        List<int> usedYGrids = new List<int>();
-
         int spawnNum = Random.Range(min, max);
         int itemNum = Random.Range(minItems, maxItems);
 
@@ -58,19 +59,14 @@ public class ColliderScript : MonoBehaviour {
             int i = Random.Range(0, spawnables.Count);
 
             int xInd;
-            do
-            {
-                xInd = Random.Range(0, xGrids.Count);
-            } while (usedXGrids.Contains(xInd));
-
             int yInd;
             do
             {
+                xInd = Random.Range(0, xGrids.Count);
                 yInd = Random.Range(0, yGrids.Count);
-            } while (usedYGrids.Contains(yInd));
+            } while (usedGrids.Contains(new KeyValuePair<int, int>(xInd, yInd)));
 
-            usedXGrids.Add(xInd);
-            usedYGrids.Add(yInd);
+            usedGrids.Add(new KeyValuePair<int, int>(xInd, yInd));
             float x = xGrids[xInd];
             float y = yGrids[yInd];
 
@@ -85,19 +81,14 @@ public class ColliderScript : MonoBehaviour {
             int i = Random.Range(0, items.Count);
 
             int xInd;
-            do
-            {
-                xInd = Random.Range(0, xGrids.Count);
-            } while (usedXGrids.Contains(xInd));
-
             int yInd;
             do
             {
+                xInd = Random.Range(0, xGrids.Count);
                 yInd = Random.Range(0, yGrids.Count);
-            } while (usedYGrids.Contains(yInd));
+            } while (usedGrids.Contains(new KeyValuePair<int, int>(xInd, yInd)));
 
-            usedXGrids.Add(xInd);
-            usedYGrids.Add(yInd);
+            usedGrids.Add(new KeyValuePair<int, int>(xInd, yInd));
             float x = xGrids[xInd];
             float y = yGrids[yInd];
 
@@ -113,6 +104,20 @@ public class ColliderScript : MonoBehaviour {
             other.transform.position = new Vector3(17.7f, 0f, 0f);
 
             SpawnObjects();
+        }
+        else
+        {
+            int index = yGrids.IndexOf(other.transform.position.y);
+
+            foreach(KeyValuePair<int, int> pair in usedGrids.ToArray())
+            {
+                if (pair.Value == index)
+                {
+                    usedGrids.Remove(pair);
+                }
+            }
+
+            Destroy(other.gameObject);
         }
     }
 }
