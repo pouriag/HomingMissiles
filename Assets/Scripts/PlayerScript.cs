@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +16,7 @@ public class PlayerScript : MonoBehaviour {
     public float speed;
     public int id = 1;
     public float itemTime = 5f;
-
+    public int points = 0;
     private float moveHorizontal;
     private float moveVertical;
     private Rigidbody rigidBody;
@@ -121,7 +122,10 @@ public class PlayerScript : MonoBehaviour {
 
             if (other.tag[other.tag.Length - 1] == id.ToString()[0])
             {
-                print("LAAAAAND!");
+
+                points = (int)(Time.timeSinceLevelLoad * 1.2);
+                print(points);
+                Destroy(this.gameObject);
             }
             else
             {
