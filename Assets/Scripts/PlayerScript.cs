@@ -49,17 +49,21 @@ public class PlayerScript : MonoBehaviour {
         rigidBody = GetComponent<Rigidbody>();
         if (!gameObject.transform.GetChild(0).gameObject.activeSelf) gameObject.GetComponent<BoxCollider>().enabled = false;
 
-    }
-
-    private void Update()
-    {
-        if(!hasChild){
+        if (!hasChild)
+        {
             if (gameObject.transform.GetChild(0).gameObject.activeSelf)
             {
                 hasChild = true;
             }
+            else
+            {
+                card.gameObject.SetActive(false);
+            }
         }
+    }
 
+    private void Update()
+    {
         if(hasChild){
             points = (int)(Time.timeSinceLevelLoad * 1.2);
             score.text = points.ToString();
