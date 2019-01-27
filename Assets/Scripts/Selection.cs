@@ -57,11 +57,15 @@ public class Selection : MonoBehaviour
     }
 
     private void Move()
-    {   
+    {
+        GameObject[] playerSelects = GameObject.FindGameObjectsWithTag("PlayerSelect");
         moveHorizontal = Input.GetAxis("P" + id + " Horizontal");
 
         if(moveHorizontal > 0 && gameObject.transform.position.x < 1441 && time == DELAY_TIME ){
             gameObject.transform.position += new Vector3(432, 0, 0);
+            foreach (GameObject go in playerSelects){
+
+            }
             while (time > 0){
                 time -= Time.deltaTime * 0.1f;
             }

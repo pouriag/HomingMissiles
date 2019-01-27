@@ -17,19 +17,19 @@ public class Activator : MonoBehaviour
             switch (pair.Key)
             {
                 case "Foxy":
-                    foxy.SetActive(true);
+                    foxy.transform.GetChild(0).gameObject.SetActive(true);
                     foxy.GetComponent<PlayerScript>().setId(pair.Value);
                     break;
                 case "Spanky":
-                    spanky.SetActive(true);
+                    spanky.transform.GetChild(0).gameObject.SetActive(true);
                     spanky.GetComponent<PlayerScript>().setId(pair.Value);
                     break;
                 case "Hottie":
-                    hottie.SetActive(true);
+                    hottie.transform.GetChild(0).gameObject.SetActive(true);
                     hottie.GetComponent<PlayerScript>().setId(pair.Value);
                     break;
                 case "Bumpkin":
-                    bumpkin.SetActive(true);
+                    bumpkin.transform.GetChild(0).gameObject.SetActive(true);
                     bumpkin.GetComponent<PlayerScript>().setId(pair.Value);
                     break;
 
