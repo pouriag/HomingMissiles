@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public GameObject panel;
     int currScene = -1;
     // Use this for initialization
     void Start()
@@ -18,6 +20,7 @@ public class SceneLoader : MonoBehaviour
         if (currScene == 4 && missiles.Length < 1) 
         {
             GameObject.Find("Roads").GetComponent<BackgroundScript>().scrollSpeed = 0;
+            panel.SetActive(true);
         }
         
         if (currScene == 0 || currScene == 1)

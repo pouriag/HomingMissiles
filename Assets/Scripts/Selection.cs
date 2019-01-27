@@ -78,7 +78,7 @@ public class Selection : MonoBehaviour
             case 360 :
                 if (!GameObject.Find("Spanky").GetComponent<SelectStatus>().get()){
                     GameObject.Find("Spanky").GetComponent<SelectStatus>().set(true);
-                    characterName = "Spanky";
+                    GameObject.Find("GameControls").GetComponent<DontDestroy>().characterName = "Spanky";
                     return true;
                 }
                 break;

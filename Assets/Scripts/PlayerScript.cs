@@ -17,6 +17,8 @@ public class PlayerScript : MonoBehaviour {
     public int id = 1;
     public float itemTime = 5f;
     public int points = 0;
+    public string characterName = "";
+
     private float moveHorizontal;
     private float moveVertical;
     private Rigidbody rigidBody;
@@ -31,6 +33,7 @@ public class PlayerScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
+        characterName = GameObject.Find("").name;
 	}
 
     private void Update()
@@ -124,8 +127,7 @@ public class PlayerScript : MonoBehaviour {
             {
 
                 points = (int)(Time.timeSinceLevelLoad * 1.2);
-                print(points);
-                Destroy(this.gameObject);
+
             }
             else
             {
@@ -157,4 +159,11 @@ public class PlayerScript : MonoBehaviour {
             activeItem = Items.Speed;
         }
     }
+
+    private void SavePoints(GameObject gameObject)
+    {
+
+        GameObject.Find("Panel").GetComponent<ShowPoints>().points.Add(id, gameObject.GetComponent<PlayerScript>().points);
+    }
+    
 }
