@@ -12,6 +12,7 @@ TagManager:
   - Speed
   - Control
   - Border
+  - Child
   layers:
   - Default
   - TransparentFX

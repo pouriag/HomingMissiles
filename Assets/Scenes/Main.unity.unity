@@ -265,10 +265,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bumpkin_40fanim
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 74a2300b6b45fff45a0daabafc9a6bc9, type: 3}
-      propertyPath: m_TagString
-      value: Child
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 74a2300b6b45fff45a0daabafc9a6bc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.42858955
@@ -365,10 +361,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: bb6c5163c623aba40a8e5db5918ed3d4, type: 3}
       propertyPath: m_Name
       value: Spanky_40fanim
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: bb6c5163c623aba40a8e5db5918ed3d4, type: 3}
-      propertyPath: m_TagString
-      value: Child
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bb6c5163c623aba40a8e5db5918ed3d4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -775,10 +767,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hottie_40fanim
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 143dcfd470b08d14d9271ede41ef9bb6, type: 3}
-      propertyPath: m_TagString
-      value: Child
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 143dcfd470b08d14d9271ede41ef9bb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.461951
@@ -853,12 +841,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 143dcfd470b08d14d9271ede41ef9bb6, type: 3}
---- !u!1 &568865846 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 74a2300b6b45fff45a0daabafc9a6bc9,
-    type: 3}
-  m_PrefabInstance: {fileID: 145230640}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &628661882
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,13 +885,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3879c0829b0074b4f98e0dbc32887bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 1803588362}
-  mainCam: {fileID: 519420028}
   speed: 3
   id: 2
   itemTime: 5
   points: 0
+<<<<<<< HEAD
   characterName: 
+=======
+>>>>>>> bf102647494f6e3e9cb15a624454540a00eb4929
 --- !u!54 &628661885
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1078,13 +1061,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3879c0829b0074b4f98e0dbc32887bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 568865846}
-  mainCam: {fileID: 519420028}
   speed: 3
   id: 4
   itemTime: 5
   points: 0
+<<<<<<< HEAD
   characterName: 
+=======
+>>>>>>> bf102647494f6e3e9cb15a624454540a00eb4929
 --- !u!54 &901989043
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1126,10 +1110,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 1be0a7a024b94f7409d1e991b2f2c17b, type: 3}
       propertyPath: m_Name
       value: Foxy_40fanim
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 1be0a7a024b94f7409d1e991b2f2c17b, type: 3}
-      propertyPath: m_TagString
-      value: Child
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1be0a7a024b94f7409d1e991b2f2c17b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1541,12 +1521,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 55, y: 1, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1580984209 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 143dcfd470b08d14d9271ede41ef9bb6,
-    type: 3}
-  m_PrefabInstance: {fileID: 547595004}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1644877003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,13 +1567,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3879c0829b0074b4f98e0dbc32887bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 1580984209}
-  mainCam: {fileID: 519420028}
   speed: 3
   id: 1
   itemTime: 5
   points: 0
+<<<<<<< HEAD
   characterName: 
+=======
+>>>>>>> bf102647494f6e3e9cb15a624454540a00eb4929
 --- !u!54 &1644877006
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1673,13 +1648,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3879c0829b0074b4f98e0dbc32887bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 2079743716}
-  mainCam: {fileID: 519420028}
   speed: 3
   id: 3
   itemTime: 5
   points: 0
+<<<<<<< HEAD
   characterName: 
+=======
+>>>>>>> bf102647494f6e3e9cb15a624454540a00eb4929
 --- !u!54 &1682565398
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1892,12 +1868,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1803588362 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: bb6c5163c623aba40a8e5db5918ed3d4,
-    type: 3}
-  m_PrefabInstance: {fileID: 503212169}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1838258686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,12 +1937,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2079743716 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 1be0a7a024b94f7409d1e991b2f2c17b,
-    type: 3}
-  m_PrefabInstance: {fileID: 949759958}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2108774517
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UB;
 
 public enum Items
 {
@@ -31,12 +32,12 @@ public class PlayerScript : MonoBehaviour {
     private bool shield = false;
     private bool control = false;
     private bool xspeed = false;
-    private bool firstDead = false;
+    private bool firstHome = false;
 
     // Use this for initialization
     void Start () {
         rigidBody = GetComponent<Rigidbody>();
-        characterName = GameObject.Find("").name;
+        //characterName = GameObject.Find("").name;
 	}
 
     private void Update()
@@ -81,7 +82,7 @@ public class PlayerScript : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && firstDead)
+        if (Input.GetKeyDown(KeyCode.Space) && firstHome)
         {
             mainCam.GetComponent<D2FogsPE>().enabled = true;
         }
@@ -135,8 +136,8 @@ public class PlayerScript : MonoBehaviour {
             {
 
                 points = (int)(Time.timeSinceLevelLoad * 1.2);
-                print(points);
-                child.SetActive(false);
+                if (SavePoints(this.gameObject) == 1) firstHome = true;
+                Destroy(child);
             }
             else
             {
@@ -169,10 +170,11 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
-    private void SavePoints(GameObject gameObject)
+    private int SavePoints(GameObject gameObject)
     {
 
         GameObject.Find("Panel").GetComponent<ShowPoints>().points.Add(id, gameObject.GetComponent<PlayerScript>().points);
+        return GameObject.Find("Panel").GetComponent<ShowPoints>().points.Count;
     }
     
 }

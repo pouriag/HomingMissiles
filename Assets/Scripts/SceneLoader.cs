@@ -16,7 +16,7 @@ public class SceneLoader : MonoBehaviour
 
     void Update()
     {
-        GameObject [] missiles = GameObject.FindGameObjectsWithTag("Player");
+        GameObject [] missiles = GameObject.FindGameObjectsWithTag("Child");
         if (currScene == 4 && missiles.Length < 1) 
         {
             GameObject.Find("Roads").GetComponent<BackgroundScript>().scrollSpeed = 0;
