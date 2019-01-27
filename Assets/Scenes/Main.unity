@@ -137,7 +137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46445098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.8643513, y: -4.115558, z: 1.1637508}
+  m_LocalPosition: {x: 3.8643513, y: -3, z: 1.1637508}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 90336232}
@@ -187,10 +187,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90336229}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12.799999, y: 7.2, z: 0.2}
+  m_Size: {x: 19.2, y: 10.8, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &90336231
 SpriteRenderer:
@@ -229,7 +229,7 @@ SpriteRenderer:
   m_SortingLayerID: -425271945
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7b7cd42db47690c4fa8b50c72f688742, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 233a5b2633601d04699fbeb741b4da7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -248,8 +248,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90336229}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.8643513, y: 4.115558, z: -1.1637508}
-  m_LocalScale: {x: 1.3875, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: -3.8643513, y: 4, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46445099}
   m_RootOrder: 0
@@ -628,10 +628,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513151731}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12.799999, y: 7.2, z: 0.2}
+  m_Size: {x: 19.2, y: 10.8, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &513151734
 SpriteRenderer:
@@ -670,7 +670,7 @@ SpriteRenderer:
   m_SortingLayerID: -425271945
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7b7cd42db47690c4fa8b50c72f688742, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 233a5b2633601d04699fbeb741b4da7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -689,8 +689,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513151731}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.895649, y: 4.115558, z: -1.1637508}
-  m_LocalScale: {x: 1.3875, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: 15.336, y: 4, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46445099}
   m_RootOrder: 1
@@ -707,8 +707,9 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  - component: {fileID: 519420034}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420036}
+  - component: {fileID: 519420034}
   - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
@@ -748,7 +749,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.6039216, g: 0.60784316, b: 0.6039216, a: 0}
+  m_BackGroundColor: {r: 0.54901963, g: 0.52156866, b: 0.47450984, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -801,17 +802,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bc17351fc38a45ca9bfb8e99cdcda5c, type: 3}
+  m_Script: {fileID: 11500000, guid: a5e3793eb767da246931bb6e2e67ed6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color: {r: 1, g: 1, b: 1, a: 1}
-  Size: 1
-  HorizontalSpeed: 0.35
-  VerticalSpeed: 0
-  Density: 0.78
-  Shader: {fileID: 4800000, guid: fdac6dc07af404deba03f0e8f95edf1f, type: 3}
+  missiles:
+  - {fileID: 1644877003}
+  - {fileID: 628661882}
+  - {fileID: 1682565395}
+  - {fileID: 901989040}
+  music: {fileID: 0}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -842,10 +843,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66ffa3b4ded34a38a5805b4b524a5f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foxy: {fileID: 1682565395}
-  spanky: {fileID: 628661882}
-  hottie: {fileID: 1644877003}
-  bumpkin: {fileID: 901989040}
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+  m_Name: 
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f372ff9c95071441a5b76b1775ac6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 0}
+  shakeDuration: 0
+  shakeAmount: 0.7
+  decreaseFactor: 1
 --- !u!1 &523183078
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,7 +1007,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535364878}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -44.25, y: 0, z: 0}
+  m_LocalPosition: {x: -48.12, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1001,22 +1040,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   road: {fileID: 46445098}
   spawnables:
-  - {fileID: 2238540286994939125, guid: 575376686fdfb124eb0641f435473839, type: 3}
   - {fileID: 9189756799126382907, guid: c179273c70e48624aac196c870513a45, type: 3}
   - {fileID: 4269421855916200501, guid: 02cb35125f26d04448d813696062e68b, type: 3}
   - {fileID: 9154833143589925086, guid: 54d8b8b820f60444fa371905c4583fd7, type: 3}
+  - {fileID: 397231761128549857, guid: 24f490fad4598440cad1b4b971c92847, type: 3}
   - {fileID: 5112473693801884402, guid: 9b226768e324842f3b417ef3010d213a, type: 3}
   - {fileID: 525604247409014115, guid: aefabb89315904453be9217b807c5cea, type: 3}
   - {fileID: 6508040688103039948, guid: d87f25123e075433e9d8f37f3a85e909, type: 3}
-  - {fileID: 397231761128549857, guid: 24f490fad4598440cad1b4b971c92847, type: 3}
   items:
   - {fileID: 8557810038585284251, guid: 37cb6f32590e55e4c9293561d9c97425, type: 3}
   - {fileID: 7033791152387392540, guid: dbe0b1e07c729f0458135add09aade80, type: 3}
   - {fileID: 5540372950937474292, guid: 52806db45e8c2d140857fa2f7da0d18e, type: 3}
-  min: 3
-  max: 5
-  finalMin: 10
-  finalMax: 15
+  min: 1
+  max: 3
+  finalMin: 6
+  finalMax: 10
   minItems: 1
   maxItems: 2
   timeInterval: 10
@@ -1137,7 +1175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &628661883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1165,10 +1203,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   child: {fileID: 1803588362}
   mainCam: {fileID: 519420028}
+  explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
   speed: 3
   itemTime: 5
   points: 0
-  characterName: 
+  characterName: Spanky
 --- !u!54 &628661885
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1193,7 +1232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628661882}
   m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: -5.28, y: -2.96, z: -1}
+  m_LocalPosition: {x: -8.18, y: -2.96, z: -1}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 503212170}
@@ -1226,11 +1265,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900821669}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12.799999, y: 7.2, z: 0.2}
-  m_Center: {x: -0.0000009536743, y: 0, z: 0}
+  m_Size: {x: 19.2, y: 10.8, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &900821672
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1268,7 +1307,7 @@ SpriteRenderer:
   m_SortingLayerID: -425271945
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7b7cd42db47690c4fa8b50c72f688742, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 233a5b2633601d04699fbeb741b4da7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1287,8 +1326,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900821669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.624352, y: 4.115558, z: -1.1637508}
-  m_LocalScale: {x: 1.3875, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: -23.064, y: 4, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46445099}
   m_RootOrder: 2
@@ -1311,7 +1350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &901989041
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1339,10 +1378,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   child: {fileID: 568865846}
   mainCam: {fileID: 519420028}
+  explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
   speed: 3
   itemTime: 5
   points: 0
-  characterName: 
+  characterName: Bumpkin
 --- !u!54 &901989043
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1367,7 +1407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901989040}
   m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: -5.28, y: 3.04, z: -1}
+  m_LocalPosition: {x: -8.18, y: 3.04, z: -1}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 145230641}
@@ -1699,7 +1739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1351758191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1993,7 +2033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1644877004
 Transform:
   m_ObjectHideFlags: 0
@@ -2002,7 +2042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644877003}
   m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: -5.28, y: -0.96, z: -1}
+  m_LocalPosition: {x: -8.18, y: -0.96, z: -1}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1323443195}
@@ -2023,10 +2063,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   child: {fileID: 1580984209}
   mainCam: {fileID: 519420028}
+  explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
   speed: 3
   itemTime: 5
   points: 0
-  characterName: 
+  characterName: Hottie
 --- !u!54 &1644877006
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2074,7 +2115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1682565396
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2102,10 +2143,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   child: {fileID: 2079743716}
   mainCam: {fileID: 519420028}
+  explode: {fileID: 100010, guid: 2b1a3bfdd1aa1864991f510184a7c080, type: 3}
   speed: 3
   itemTime: 5
   points: 0
-  characterName: 
+  characterName: Foxy
 --- !u!54 &1682565398
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2130,7 +2172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682565395}
   m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: -5.28, y: 1.04, z: -1}
+  m_LocalPosition: {x: -8.18, y: 1.04, z: -1}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 262964495}
@@ -2251,8 +2293,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794149777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.656, y: 4.115558, z: -1.1637508}
-  m_LocalScale: {x: 1.3875, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: 34.536, y: 4, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46445099}
   m_RootOrder: 3
@@ -2265,10 +2307,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794149777}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12.799999, y: 7.2, z: 0.2}
+  m_Size: {x: 19.2, y: 10.8, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1794149780
 SpriteRenderer:
@@ -2307,7 +2349,7 @@ SpriteRenderer:
   m_SortingLayerID: -425271945
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7b7cd42db47690c4fa8b50c72f688742, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 233a5b2633601d04699fbeb741b4da7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

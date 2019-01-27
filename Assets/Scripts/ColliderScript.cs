@@ -102,7 +102,7 @@ public class ColliderScript : MonoBehaviour {
     {
         if (other.tag == "Background")
         {
-            other.transform.position = new Vector3(31.6f, 0f, 0f);
+            other.transform.position = new Vector3(34.4f, 1f, -1f);
 
             SpawnObjects();
         }

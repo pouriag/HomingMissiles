@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +7,6 @@ public class Selection : MonoBehaviour
 {
     public GameObject Foxy, Spanky, Bumpkin, Hottie;
     public const float DELAY_TIME = 25000f;
-    public string characterName = "";
     public int id ;
 
     private float moveHorizontal;
