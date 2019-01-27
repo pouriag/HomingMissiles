@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UB;
 
 public enum Items
@@ -18,6 +19,10 @@ public class PlayerScript : MonoBehaviour {
     public GameObject mainCam;
     public GameObject explode;
     public GameObject landCeleb;
+
+    public Image card;
+    public Text score;
+    public Sprite deadPic;
 
     public float speed;
     public float itemTime = 5f;
@@ -44,18 +49,25 @@ public class PlayerScript : MonoBehaviour {
         rigidBody = GetComponent<Rigidbody>();
         if (!gameObject.transform.GetChild(0).gameObject.activeSelf) gameObject.GetComponent<BoxCollider>().enabled = false;
 
-    }
-
-    private void Update()
-    {
-        if(!hasChild){
+        if (!hasChild)
+        {
             if (gameObject.transform.GetChild(0).gameObject.activeSelf)
             {
                 hasChild = true;
             }
+            else
+            {
+                card.gameObject.SetActive(false);
+            }
         }
+    }
 
+    private void Update()
+    {
         if(hasChild){
+            points = (int)(Time.timeSinceLevelLoad * 1.2);
+            score.text = points.ToString();
+
             if (itemActive)
             {
                 if (Time.timeSinceLevelLoad - activeItemStartTime > itemTime)
@@ -141,6 +153,9 @@ public class PlayerScript : MonoBehaviour {
             }
             else
             {
+                card.sprite = deadPic;
+                points = 0;
+                score.text = points.ToString();
                 SavePoints(this.gameObject);
                 Destroy(other.gameObject);
                 Instantiate(explode, transform.position, Quaternion.identity);
@@ -155,9 +170,7 @@ public class PlayerScript : MonoBehaviour {
 
             if (other.tag.Substring(6) == characterName)
             {
-
                 Instantiate(landCeleb, transform.position, Quaternion.identity);
-                points = (int)(Time.timeSinceLevelLoad * 1.2);
                 if (SavePoints(this.gameObject) == 1) firstHome = true;
                 Destroy(child);
                 GetComponent<BoxCollider>().enabled = false;
@@ -171,6 +184,9 @@ public class PlayerScript : MonoBehaviour {
                 }
                 else
                 {
+                    card.sprite = deadPic;
+                    points = 0;
+                    score.text = points.ToString();
                     SavePoints(this.gameObject);
                     Destroy(other.gameObject);
                     Instantiate(explode, transform.position, Quaternion.identity);

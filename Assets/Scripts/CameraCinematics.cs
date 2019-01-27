@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraCinematics : MonoBehaviour
 {
     public List<GameObject> missiles;
-    public AudioClip music;
 
     void Awake()
     {
@@ -59,6 +58,5 @@ public class CameraCinematics : MonoBehaviour
         }
         GetComponent<CameraShake>().enabled = true;
         GameObject.FindObjectOfType<BackgroundScript>().scrollSpeed = 5f;
-        //GetComponent<AudioSource>().clip = music;
     }
 }
