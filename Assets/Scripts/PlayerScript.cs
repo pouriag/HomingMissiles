@@ -21,6 +21,11 @@ public class PlayerScript : MonoBehaviour {
     public GameObject landCeleb;
 
     public Image card;
+    public Image item1;
+    public Image item2;
+    public Image item3;
+    public Image item4;
+
     public Text score;
     public Sprite deadPic;
 
@@ -47,6 +52,10 @@ public class PlayerScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        item1.gameObject.SetActive(false);
+        item2.gameObject.SetActive(false);
+        item3.gameObject.SetActive(false);
+        item4.gameObject.SetActive(false);
         rigidBody = GetComponent<Rigidbody>();
         if (!gameObject.transform.GetChild(0).gameObject.activeSelf) gameObject.GetComponent<BoxCollider>().enabled = false;
 
@@ -83,6 +92,7 @@ public class PlayerScript : MonoBehaviour {
                     activeItem = 0;
                     activeItem = Items.None;
                     itemActive = false;
+
                 }
             }
 
@@ -93,12 +103,14 @@ public class PlayerScript : MonoBehaviour {
                     control = true;
                     itemActive = true;
                     activeItemStartTime = Time.timeSinceLevelLoad;
+                    item1.gameObject.SetActive(false);
                 }
                 else if (activeItem == Items.Shield)
                 {
                     shield = true;
                     itemActive = true;
                     activeItemStartTime = Time.timeSinceLevelLoad;
+                    item2.gameObject.SetActive(false);
                 }
                 else if (activeItem == Items.Speed)
                 {
@@ -106,6 +118,7 @@ public class PlayerScript : MonoBehaviour {
                     xspeed = true;
                     itemActive = true;
                     activeItemStartTime = Time.timeSinceLevelLoad;
+                    item3.gameObject.SetActive(false);
                 }
             }
 
@@ -172,8 +185,15 @@ public class PlayerScript : MonoBehaviour {
             if (other.tag.Substring(6) == characterName)
             {
                 landed = true;
+                activeItem = Items.None;
                 Instantiate(landCeleb, transform.position, Quaternion.identity);
-                if (SavePoints(this.gameObject) == 1) firstHome = true;
+                if (SavePoints(this.gameObject) == 1){
+                    firstHome = true;
+                    item1.gameObject.SetActive(false);
+                    item2.gameObject.SetActive(false);
+                    item3.gameObject.SetActive(false);
+                    item4.gameObject.SetActive(true);
+                } 
                 Destroy(child);
                 GetComponent<BoxCollider>().enabled = false;
             }
@@ -202,16 +222,26 @@ public class PlayerScript : MonoBehaviour {
         {
             Destroy(other.gameObject);
             activeItem = Items.Control;
+            item1.gameObject.SetActive(true);
+            item2.gameObject.SetActive(false);
+            item3.gameObject.SetActive(false);
+
         }
         else if (other.tag == "Shield")
         {
             Destroy(other.gameObject);
             activeItem = Items.Shield;
+            item2.gameObject.SetActive(true);
+            item1.gameObject.SetActive(false);
+            item3.gameObject.SetActive(false);
         }
         else if (other.tag == "Speed")
         {
             Destroy(other.gameObject);
             activeItem = Items.Speed;
+            item3.gameObject.SetActive(true);
+            item1.gameObject.SetActive(false);
+            item2.gameObject.SetActive(false);
         }
     }
 
