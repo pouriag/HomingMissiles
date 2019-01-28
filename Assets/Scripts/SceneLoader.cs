@@ -24,8 +24,10 @@ public class SceneLoader : MonoBehaviour
         {
             GameObject.Find("Roads").GetComponent<BackgroundScript>().scrollSpeed = 0;
             panel.GetComponent<Image>().enabled = true;
+            panel.transform.GetChild(0).gameObject.SetActive(true);
+            GameObject.Find("GameControls").GetComponent<DontDestroy>().idList.Clear();
         }
-        
+       
         if (currScene == 0 || currScene == 1)
         {
             StartCoroutine(Wait());
@@ -34,6 +36,11 @@ public class SceneLoader : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
+    }
+
+    public void PrevScene(){
+        currScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currScene - 1);
     }
 
     public void NextScene()

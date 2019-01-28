@@ -29,6 +29,7 @@ public class PlayerScript : MonoBehaviour {
     public int points = 0;
     public string characterName = "";
 
+    private bool landed = false;
     private int id;
 
     private float moveHorizontal;
@@ -65,7 +66,7 @@ public class PlayerScript : MonoBehaviour {
     private void Update()
     {
         if(hasChild){
-            points = (int)(Time.timeSinceLevelLoad * 1.2);
+            if(!landed) points = (int)(Time.timeSinceLevelLoad * 1.2);
             score.text = points.ToString();
 
             if (itemActive)
@@ -170,6 +171,7 @@ public class PlayerScript : MonoBehaviour {
 
             if (other.tag.Substring(6) == characterName)
             {
+                landed = true;
                 Instantiate(landCeleb, transform.position, Quaternion.identity);
                 if (SavePoints(this.gameObject) == 1) firstHome = true;
                 Destroy(child);
@@ -215,10 +217,8 @@ public class PlayerScript : MonoBehaviour {
 
     private int SavePoints(GameObject gameObject)
     {
-        Debug.Log(points);
-        return 0;
-        //GameObject.Find("Panel").GetComponent<ShowPoints>().points.Add(id, points);
-        //return GameObject.Find("Panel").GetComponent<ShowPoints>().points.Count;
+        GameObject.Find("Panel").GetComponent<ShowPoints>().points.Add(id, points);
+        return GameObject.Find("Panel").GetComponent<ShowPoints>().points.Count;
     }
 
     public void setId(int id){

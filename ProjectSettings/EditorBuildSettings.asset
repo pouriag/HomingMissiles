@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Event.unity
-    guid: ffcd8f43438524174bcd084124565325
-  - enabled: 1
     path: Assets/Scenes/Team Clueless.unity
     guid: c2c4728b071c64e21a56c12bbc07d25b
+  - enabled: 1
+    path: Assets/Scenes/Event.unity
+    guid: ffcd8f43438524174bcd084124565325
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 6d99120baf2e546ed9167b12580cfaba
